@@ -1,0 +1,28 @@
+### Create Module (POST)
+POST http://localhost:8090/modules
+Content-Type: application/json
+
+{
+  "moduleName": "BigData"
+}
+
+### Update Module (PUT)
+PUT http://localhost:8090/modules/4
+Content-Type: application/json
+
+{
+  "id": 4,
+  "moduleName": "Big-Data"
+}
+
+### Delete Module (DELETE)
+DELETE http://localhost:8090/modules/4
+Accept: application/json
+
+### Get Module by ID (GET)
+GET http://localhost:8090/modules/4
+Accept: application/json
+
+### Get All Modules (GET) - Note: Requires Controller Update
+GET http://localhost:8090/modules
+Accept: application/json

@@ -1,0 +1,43 @@
+version: '3.8'
+
+services:
+  workshop-service:
+    image: workshop-service
+    build: ./workshopmicro-service
+    ports:
+      - "8081:8081"
+    networks:
+      - microservices-network
+
+  course-service:
+    image: course-service
+    build: ./course-microservice
+    ports:
+      - "8080:8080"
+    volumes:
+      - uploads:/uploads
+    networks:
+      - microservices-network
+
+  module-service:
+    image: module-service
+    build: ./module-microservice
+    ports:
+      - "8090:8090"
+    networks:
+      - microservices-network
+
+  speciality-service:
+    image: speciality-service
+    build: ./speciality-microservice
+    ports:
+      - "8083:8083"
+    networks:
+      - microservices-network
+
+volumes:
+  uploads:
+
+networks:
+  microservices-network:
+    driver: bridge 
